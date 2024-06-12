@@ -1,3 +1,5 @@
+import { CreateTable } from '../domain'
+
 interface RunOptions {
   base: number
   limit: number
@@ -5,8 +7,12 @@ interface RunOptions {
 }
 
 export class ServerApp {
-  static run(options: RunOptions) {
-    console.log("🚀 ~ ServerApp ~ run ~ options:", options)
+  static run({ base, limit, isShowTable }: RunOptions) {
     console.log('🚀 Server is runnning...')
+
+    const table = new CreateTable().execute({ base, limit })
+    if (isShowTable) {
+      console.log(table)
+    }
   }
 }
