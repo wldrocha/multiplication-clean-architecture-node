@@ -5,13 +5,13 @@ import { ServerApp } from './presentation'
 })()
 
 async function main() {
-  const { b: base, l: limit, s: isShowTable, n: fileName, d: destination } = yarg
+  const { b: base, l: limit, s: isShowTable, n: fileName, d: fileDestination } = yarg
 
   ServerApp.run({
     base,
     limit,
     isShowTable,
     fileName,
-    destination
+    fileDestination
   })
 }

@@ -5,11 +5,11 @@ interface RunOptions {
   limit: number
   isShowTable: boolean
   fileName: string
-  destination: string
+  fileDestination: string
 }
 
 export class ServerApp {
-  static run({ base, limit, isShowTable, fileName, destination }: RunOptions) {
+  static run({ base, limit, isShowTable, fileName, fileDestination }: RunOptions) {
     console.log('🚀 Server is runnning...')
 
     const table = new CreateTable().execute({
@@ -18,8 +18,8 @@ export class ServerApp {
     })
     const wasCreated = new SaveFile().execute({
       fileContent: table,
-      destination,
-      fileName: fileName
+      fileDestination,
+      fileName
     })
     if (isShowTable) {
       console.log(table)
