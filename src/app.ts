@@ -1,14 +1,12 @@
 import { yarg } from './config'
+import { ServerApp } from './presentation'
 
-// console.log(process.argv)
-// console.log(yarg)
-
-
-(async()=>{
-    await main()
+(async () => {
+  await main()
 })()
 
-async function main(){
-    
-    console.log("🚀 ~ main ~ yarg.base:", yarg.base)
+async function main() {
+  const { b: base, l: limit, s: isShowTable } = yarg
+
+  ServerApp.run({ base, limit, isShowTable })
 }
