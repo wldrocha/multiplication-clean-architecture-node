@@ -9,5 +9,6 @@ import { yarg } from './config'
 })()
 
 async function main(){
-
+    
+    console.log("🚀 ~ main ~ yarg.base:", yarg.base)
 }
