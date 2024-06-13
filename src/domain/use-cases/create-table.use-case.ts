@@ -13,17 +13,18 @@ export class CreateTable implements CreateTableUseCase {
   // could be named execute, run, start, etc
   execute({ base, limit = 10 }: CreateTableOptions) {
     let outputMessage: string = ''
-    const headerMultiplication = `
-        =================================
-                    Tabla del ${base}
-        =================================
-        `
+    // const headerMultiplication = `
+    //     =================================
+    //                 Tabla del ${base}
+    //     =================================
+    //     `
 
     for (let i = 1; i <= limit; i++) {
-      outputMessage += `${base} x ${i} = ${base * i}\n`
+      outputMessage += `${base} x ${i} = ${base * i}`
+      if (i < limit) outputMessage += '\n'
     }
 
-    const finalMessage = headerMultiplication + outputMessage
-    return finalMessage
+    // const finalMessage = headerMultiplication + outputMessage
+    return outputMessage
   }
 }
