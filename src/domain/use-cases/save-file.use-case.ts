@@ -14,7 +14,7 @@ export interface Options {
 
 export class SaveFile implements SaveFileUseCase {
   constructor() {}
-  execute({ fileContent, fileDestination = 'outputs', fileName = 'table.txt' }: Options) {
+  execute({ fileContent, fileDestination = 'outputs', fileName = 'table' }: Options) {
     try {
       fs.mkdirSync(fileDestination, { recursive: true })
 
