@@ -10,7 +10,7 @@ interface RunOptions {
 
 export class ServerApp {
   static run({ base, limit, isShowTable, fileName, fileDestination }: RunOptions) {
-    console.log('🚀 Server is runnning...')
+    console.log('🚀 Server is running...')
 
     const table = new CreateTable().execute({
       base,
