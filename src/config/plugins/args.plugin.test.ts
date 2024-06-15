@@ -26,5 +26,16 @@ describe('ArgsPlugin', () => {
     )
   })
 
-
+  test('should return configuration with  custom values', async () => {
+    const argv = await runCommand(['-b', '3', '-l', '20', '-s', '-n', 'custom-name', '-d', 'custom-dir'])
+    expect(argv).toEqual(
+      expect.objectContaining({
+        b: 3,
+        l: 20,
+        s: true,
+        n: 'custom-name',
+        d: 'custom-dir'
+      })
+    )
+  })
 })
